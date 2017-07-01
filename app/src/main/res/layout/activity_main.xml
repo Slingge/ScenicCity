@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <!--首页-->
+    <include layout="@layout/top_title" />
+
+    <FrameLayout
+        android:id="@+id/FrameAct_FragmentGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+         />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/AsukaColor"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rb1"
+            style="@style/RadioButton"
+            android:drawableTop="@drawable/cb1"
+            android:text="首页" />
+
+        <RadioButton
+            android:id="@+id/rb2"
+            style="@style/RadioButton"
+            android:drawableTop="@drawable/cb2"
+            android:text="优惠" />
+
+        <RadioButton
+            android:id="@+id/rb3"
+            style="@style/RadioButton"
+            android:drawableTop="@drawable/cb3"
+            android:text="消息" />
+
+        <RadioButton
+            android:id="@+id/rb4"
+            style="@style/RadioButton"
+            android:drawableTop="@drawable/cb4"
+            android:text="注册" />
+
+    </RadioGroup>
+
+</LinearLayout>

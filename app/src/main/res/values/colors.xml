@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--白-->
+    <color name="white">#FFFFFF</color>
+    <!--黑色字体颜色-->
+    <color name="black">#000000</color>
+    <!--白色半透明-->
+    <color name="half_white">#e0ffffff</color>
+    <!--半透明-->
+    <color name="half_transparent">#aa271405</color>
+    <!--全透明-->
+    <color name="all_transparent">#00000000</color>
+    <!--Them-->
+    <color name="AsukaColor">#600000</color>
+
+    <!--Them-->
+    <color name="line">#A00000</color>
+    <color name="colorGray">#33000000</color>
+
+    <color name="yellow">#ffc84a</color>
+    <!--灰色背景-->
+    <color name="bg_gray">#660000</color>
+
+
+</resources>
