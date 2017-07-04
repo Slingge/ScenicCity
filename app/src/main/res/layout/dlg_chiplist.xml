@@ -6,7 +6,7 @@
 
     <!--筹码列表-->
 
-    <com.lxkj.sunentertainmentcity.app.view.MyScrollView
+    <com.lxkj.sceniccity.app.view.MyScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -15,7 +15,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <com.lxkj.sunentertainmentcity.app.view.MyListView
+            <com.lxkj.sceniccity.app.view.MyListView
                 android:id="@+id/chipList"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -56,6 +56,6 @@
             </LinearLayout>
 
         </LinearLayout>
-    </com.lxkj.sunentertainmentcity.app.view.MyScrollView>
+    </com.lxkj.sceniccity.app.view.MyScrollView>
 
 </LinearLayout>

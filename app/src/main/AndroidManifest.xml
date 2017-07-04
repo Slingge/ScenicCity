@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.lxkj.sunentertainmentcity">
+    package="com.lxkj.sceniccity">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
@@ -11,7 +11,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <!--激光推送权限-->
-    <uses-permission android:name="com.lxkj.sunentertainmentcity.permission.JPUSH_MESSAGE" />
+    <uses-permission android:name="com.lxkj.sceniccity.permission.JPUSH_MESSAGE" />
     <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
@@ -61,7 +61,7 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="cn.jpush.android.intent.DaemonService" />
-                <category android:name="com.lxkj.sunentertainmentcity" />
+                <category android:name="com.lxkj.sceniccity" />
             </intent-filter>
         </service>
 
@@ -71,7 +71,7 @@
             android:enabled="true">
             <intent-filter android:priority="1000">
                 <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY" />
-                <category android:name="com.lxkj.sunentertainmentcity" />
+                <category android:name="com.lxkj.sceniccity" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.USER_PRESENT" />
@@ -95,7 +95,7 @@
                 <action android:name="cn.jpush.android.ui.PushActivity" />
 
                 <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="com.lxkj.sunentertainmentcity" />
+                <category android:name="com.lxkj.sceniccity" />
             </intent-filter>
         </activity>
         <!-- Required SDK核心功能-->
@@ -118,7 +118,7 @@
         <!-- Required. AppKey copied from Portal -->
         <meta-data
             android:name="JPUSH_APPKEY"
-            android:value="53e57f1367358480fd155e7c" />
+            android:value="8a63cc739a93b3bb8c914dea" />
         <!--自定的广播-->
         <receiver
             android:name=".jPush.jPushSrevice"
@@ -131,10 +131,16 @@
                 <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" /> <!--Required  用户打开自定义通知栏的intent-->
                 <action android:name="cn.jpush.android.intent.ACTION_RICHPUSH_CALLBACK" /> <!--Optional 用户接受Rich Push Javascript 回调函数的intent-->
                 <action android:name="cn.jpush.android.intent.CONNECTION" /><!-- 接收网络变化 连接/断开 since 1.6.3 -->
-                <category android:name="com.lxkj.sunentertainmentcity" />
+                <category android:name="com.lxkj.sceniccity" />
             </intent-filter>
         </receiver>
 
+        <activity
+            android:name=".app.ui.NewsInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".app.ui.WelComeActivity"
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".app.ui.MainActivity"

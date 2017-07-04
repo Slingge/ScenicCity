@@ -12,8 +12,8 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
         manifestPlaceholders = [
-                JPUSH_PKGNAME: "com.lxkj.sunentertainmentcity",//包名
-                JPUSH_APPKEY : "53e57f1367358480fd155e7c", //JPush上注册的包名对应的appkey.
+                JPUSH_PKGNAME: "com.lxkj.sceniccity",//包名
+                JPUSH_APPKEY : "8a63cc739a93b3bb8c914dea", //JPush上注册的包名对应的appkey.
                 JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
         ]
     }
@@ -49,4 +49,6 @@ dependencies {
     // 此处以JPush 3.0.3 版本为例。
     compile 'cn.jiguang.sdk:jcore:1.1.1'
     // 此处以JCore 1.1.1 版本为例。
+
+    compile 'com.google.code.gson:gson:2.2.4'
 }

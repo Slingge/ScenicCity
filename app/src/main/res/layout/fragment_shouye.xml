@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/fragment_cycle_viewpager"
-        android:name="com.lxkj.sunentertainmentcity.PictureCarousel.CycleViewPager"
+        android:name="com.lxkj.sceniccity.PictureCarousel.CycleViewPager"
         android:layout_width="match_parent"
         android:layout_height="160dp" />
 
@@ -26,7 +26,7 @@
             android:layout_marginLeft="8dp"
             android:background="@drawable/ic_notice" />
 
-        <com.lxkj.sunentertainmentcity.app.view.ScrollText
+        <com.lxkj.sceniccity.app.view.ScrollText
             android:id="@+id/st_notice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -185,7 +185,7 @@
 
             </FrameLayout>
 
-            <com.lxkj.sunentertainmentcity.app.view.MyListView
+            <com.lxkj.sceniccity.app.view.MyListView
                 android:id="@+id/listView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -209,7 +209,7 @@
                 android:layout_height="0.5dp"
                 android:background="@color/line" />
 
-            <com.lxkj.sunentertainmentcity.app.view.MyGridView
+            <com.lxkj.sceniccity.app.view.MyGridView
                 android:id="@+id/gridVeiw"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

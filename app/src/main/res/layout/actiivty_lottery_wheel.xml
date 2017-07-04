@@ -33,13 +33,13 @@
         android:src="@drawable/ic_back" />
 
 
-    <com.lxkj.sunentertainmentcity.luckpan.LuckPanLayout
+    <com.lxkj.sceniccity.luckpan.LuckPanLayout
         android:id="@+id/luckpan_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true" />
 
-    <com.lxkj.sunentertainmentcity.luckpan.RotatePan
+    <com.lxkj.sceniccity.luckpan.RotatePan
         android:id="@+id/rotatePan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
