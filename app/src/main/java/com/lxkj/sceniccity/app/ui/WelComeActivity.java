@@ -11,7 +11,6 @@ import android.view.WindowManager;
 import com.lxkj.sceniccity.R;
 import com.lxkj.sceniccity.app.MyApplication;
 import com.lxkj.sceniccity.app.adapter.MyFragmentPagerAdapter;
-import com.lxkj.sceniccity.app.ui.camouflage.PointActivity;
 import com.lxkj.sceniccity.app.util.SharedPreferencesUtil;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
@@ -93,7 +92,7 @@ public class WelComeActivity extends FragmentActivity {
                             if (type.equals("0")) {
                                 intent = new Intent(WelComeActivity.this, MainActivity.class);
                             } else {
-                                intent = new Intent(WelComeActivity.this, PointActivity.class);
+                                intent = new Intent(WelComeActivity.this, NewsInfoActivity.class);
                             }
                             startActivity(intent);
                             finish();

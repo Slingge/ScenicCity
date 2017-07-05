@@ -11,10 +11,8 @@ import android.widget.ImageView;
 import com.lxkj.sceniccity.R;
 import com.lxkj.sceniccity.andbase.util.AbLogUtil;
 import com.lxkj.sceniccity.app.MyApplication;
-import com.lxkj.sceniccity.app.ui.camouflage.PointActivity;
 import com.lxkj.sceniccity.app.util.ImageLoaderUtil;
 import com.lxkj.sceniccity.app.util.SharedPreferencesUtil;
-import com.nostra13.universalimageloader.core.ImageLoader;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
@@ -148,7 +146,7 @@ public class StartActivity extends BaseActivity {
                 finish();
             }
         };
-        timer.schedule(task, 2000);
+        timer.schedule(task, 3000);
 
     }
 

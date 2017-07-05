@@ -158,9 +158,6 @@
             android:name=".app.ui.NewActivity"
             android:screenOrientation="portrait" />
 
-        <activity
-            android:name=".app.ui.camouflage.PointActivity"
-            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
