@@ -37,17 +37,17 @@ public class WebViewActivity extends BaseActivity {
     }
 
     private void init() {
-        ImageView image_back = (ImageView) findViewById(R.id.image_back);
-        image_back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
-        RelativeLayout rl = (RelativeLayout) findViewById(R.id.rl);
-        if (getIntent().getIntExtra("flag", -1) != 0) {
-            rl.setVisibility(View.GONE);
-        }
+//        ImageView image_back = (ImageView) findViewById(R.id.image_back);
+//        image_back.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                finish();
+//            }
+//        });
+//        RelativeLayout rl = (RelativeLayout) findViewById(R.id.rl);
+//        if (getIntent().getIntExtra("flag", -1) != 0) {
+//            rl.setVisibility(View.GONE);
+//        }
 
 
         MyWebView myWebView = (MyWebView) findViewById(R.id.webview);

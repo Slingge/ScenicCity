@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.RelativeLayout;
 
 import com.lxkj.sceniccity.R;
 import com.lxkj.sceniccity.app.MyApplication;
@@ -42,7 +43,6 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
 
     private ImageView image_back;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +54,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     }
 
     private void init() {
+
         radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
         image_back = (ImageView) findViewById(R.id.image_back);
 
@@ -96,6 +97,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
                 } else {
                     ft.show(shouYeFragment);
                 }
+
                 break;
             case R.id.rb2:
                 if (discountFragment == null) {
@@ -106,6 +108,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
                 }
                 image_back.setVisibility(View.GONE);
                 radioGroup.setVisibility(View.VISIBLE);
+
                 break;
             case R.id.rb3:
                 if (newFragment == null) {
@@ -116,6 +119,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
                 }
                 image_back.setVisibility(View.VISIBLE);
                 radioGroup.setVisibility(View.GONE);
+
                 break;
             case R.id.rb4:
                 if (webViewFragment == null) {
@@ -227,6 +231,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
             @Override
             public void onError(Call call, Exception e, int id) {
             }
+
             @Override
             public void onResponse(String response, int id) {
             }

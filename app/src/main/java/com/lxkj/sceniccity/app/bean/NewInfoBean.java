@@ -9,19 +9,39 @@ import java.util.List;
 public class NewInfoBean {
 
     public String reason;
-    public resultBean result;
+    public  resultBean result;
+
 
     public class resultBean {
-        public String stat;
-        public List<dataBean> data;
+
+        public List<listBean> list;
+        public List<teammatchBean> teammatch;
+    }
+
+
+    public class listBean {
+
+        public List<trBean> tr;
+    }
+
+
+    public class trBean {
+
+        public String time;
+        public String player1;
+        public String player2;
+        public String player1logobig;
+        public String player2logobig;
+        public String player1url;
+        public String player2url;
+        public String link1url;//观看
+        public String score;
 
     }
 
-    public class dataBean {
-        public String title;
-        public String thumbnail_pic_s;
+    public class teammatchBean {
+        public String name;
         public String url;
-        public String date;
     }
 
 }

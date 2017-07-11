@@ -92,7 +92,7 @@ public class WelComeActivity extends FragmentActivity {
                             if (type.equals("0")) {
                                 intent = new Intent(WelComeActivity.this, MainActivity.class);
                             } else {
-                                intent = new Intent(WelComeActivity.this, NewsInfoActivity.class);
+                                intent = new Intent(WelComeActivity.this, MainActivity.class);
                             }
                             startActivity(intent);
                             finish();

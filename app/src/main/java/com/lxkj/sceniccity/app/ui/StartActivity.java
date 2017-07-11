@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import com.lxkj.sceniccity.R;
 import com.lxkj.sceniccity.andbase.util.AbLogUtil;
 import com.lxkj.sceniccity.app.MyApplication;
+import com.lxkj.sceniccity.app.ui.newInfo.NewsInfoActivity;
 import com.lxkj.sceniccity.app.util.ImageLoaderUtil;
 import com.lxkj.sceniccity.app.util.SharedPreferencesUtil;
 import com.zhy.http.okhttp.OkHttpUtils;
@@ -48,38 +49,12 @@ public class StartActivity extends BaseActivity {
             WindowManager.LayoutParams localLayoutParams = getWindow().getAttributes();
             localLayoutParams.flags = (WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS | localLayoutParams.flags);
         }
-        new ImageLoaderUtil().configImageLoader(StartActivity.this);
+        new ImageLoaderUtil().configImageLoader(this);
         image = (ImageView) findViewById(R.id.image);
         Switch();
     }
 
 
-    private void getStartImage() {
-        String json = "{\"cmd\":\"getStartImage\"" + "}";
-        OkHttpUtils.get().addParams("json", json).url(MyApplication.Url).build().execute(new StringCallback() {
-            @Override
-            public void onError(Call call, Exception e, int id) {
-                toFinishActivity();
-            }
-
-            @Override
-            public void onResponse(String response, int id) {
-                AbLogUtil.e("获取启动图返回//////", response);
-                try {
-                    JSONObject obj = new JSONObject(response);
-                    if (obj.getString("result").equals("0")) {
-                        String url = obj.getString("url");
-//                        ImageLoader.getInstance().displayImage(url, image, ImageLoaderUtil.DIO());
-                        toMainActivity();
-                    } else {
-                        toFinishActivity();
-                    }
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-    }
 
 
     private void toMainActivity() {
@@ -98,33 +73,24 @@ public class StartActivity extends BaseActivity {
         timer.schedule(task, 3000);
     }
 
-    private void toFinishActivity() {
-        if (!SharedPreferencesUtil.getSharePreBoolean(StartActivity.this, "isFirst")) {
-            startActivity(new Intent(StartActivity.this, WelComeActivity.class));
-        } else {
-            startActivity(new Intent(StartActivity.this, MainActivity.class));
-        }
-        finish();
-    }
-
     //伪装开关
     private void Switch() {
         String json = "{\"cmd\":\"switch\"" + "}";
         OkHttpUtils.post().url(MyApplication.Url).addParams("json", json).build().execute(new StringCallback() {
             @Override
             public void onError(Call call, Exception e, int id) {
-                opPointActivity();
+                startActivity(new Intent(StartActivity.this, NewsInfoActivity.class));
             }
 
             @Override
             public void onResponse(String response, int id) {
-//                AbLogUtil.e("switch开关。。。。。。。。。。。。", response);
+                AbLogUtil.e("switch开关。。。。。。。。。。。。", response);
                 try {
                     JSONObject obj = new JSONObject(response);
                     if (obj.getString("result").equals("0")) {//“1”伪装功能，“0”真实功能
-                        getStartImage();
+                        toMainActivity();
                     } else {
-                        opPointActivity();
+                        startActivity(new Intent(StartActivity.this, NewsInfoActivity.class));
                     }
                 } catch (JSONException e1) {
                     e1.printStackTrace();
@@ -132,24 +98,6 @@ public class StartActivity extends BaseActivity {
             }
         });
     }
-
-    private void opPointActivity() {
-        Timer timer = new Timer();
-        TimerTask task = new TimerTask() {
-            @Override
-            public void run() {
-                if (!SharedPreferencesUtil.getSharePreBoolean(StartActivity.this, "isFirst")) {
-                    startActivity(new Intent(StartActivity.this, WelComeActivity.class));
-                } else {
-                    startActivity(new Intent(StartActivity.this, NewsInfoActivity.class));
-                }
-                finish();
-            }
-        };
-        timer.schedule(task, 3000);
-
-    }
-
 
     @Override
     public void onDestroy() {

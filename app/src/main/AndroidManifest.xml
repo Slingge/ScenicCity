@@ -136,7 +136,7 @@
         </receiver>
 
         <activity
-            android:name=".app.ui.NewsInfoActivity"
+            android:name=".app.ui.newInfo.NewsInfoActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".app.ui.WelComeActivity"

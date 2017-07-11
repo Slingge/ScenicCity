@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <include layout="@layout/top_title" />
+   <!-- <include layout="@layout/top_title" />-->
 
     <com.lxkj.sceniccity.app.view.MyWebView
         android:id="@+id/webview"
