@@ -34,7 +34,7 @@ public class NewsInfoActivity extends Activity implements View.OnClickListener {
 
     private NewInfoBean bean;
 
-    private String Url = "http://op.juhe.cn/onebox/basketball/nba?";
+    private final String Url = "http://op.juhe.cn/onebox/basketball/nba?";
 
 
     @Override
@@ -71,7 +71,6 @@ public class NewsInfoActivity extends Activity implements View.OnClickListener {
 
             @Override
             public void onResponse(String response, int id) {
-                Log.e("获取的咨询...........", response);
                 bean = new Gson().fromJson(response, NewInfoBean.class);
                 if (bean.reason.equals("查询成功")) {
                     adapter = new NewInfoAdapter(NewsInfoActivity.this, bean.result.list.get(0).tr);

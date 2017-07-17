@@ -9,7 +9,6 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 
 import com.lxkj.sceniccity.R;
-import com.lxkj.sceniccity.andbase.util.AbLogUtil;
 import com.lxkj.sceniccity.app.MyApplication;
 import com.lxkj.sceniccity.app.ui.newInfo.NewsInfoActivity;
 import com.lxkj.sceniccity.app.util.ImageLoaderUtil;
@@ -55,8 +54,6 @@ public class StartActivity extends BaseActivity {
     }
 
 
-
-
     private void toMainActivity() {
         Timer timer = new Timer();
         TimerTask task = new TimerTask() {
@@ -80,17 +77,18 @@ public class StartActivity extends BaseActivity {
             @Override
             public void onError(Call call, Exception e, int id) {
                 startActivity(new Intent(StartActivity.this, NewsInfoActivity.class));
+                finish();
             }
 
             @Override
             public void onResponse(String response, int id) {
-                AbLogUtil.e("switch开关。。。。。。。。。。。。", response);
                 try {
                     JSONObject obj = new JSONObject(response);
                     if (obj.getString("result").equals("0")) {//“1”伪装功能，“0”真实功能
                         toMainActivity();
                     } else {
                         startActivity(new Intent(StartActivity.this, NewsInfoActivity.class));
+                        finish();
                     }
                 } catch (JSONException e1) {
                     e1.printStackTrace();

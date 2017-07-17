@@ -30,7 +30,7 @@ import okhttp3.OkHttpClient;
  */
 public class MyApplication extends Application {
 
-    public static String Url = "http://103.41.65.221:8080/suncityService/service.action";
+    public static String Url = "http://103.41.65.221/suncityService/service.action";
 
     public static List<Map<String, String>> list = new ArrayList<>();
     public static String userName = "";
@@ -42,7 +42,7 @@ public class MyApplication extends Application {
         super.onCreate();
 
         ImageLoaderUtil.configImageLoad(getApplicationContext());
-        AbLogUtil.E = false;
+        AbLogUtil.E = true;
 
         JPushInterface.setDebugMode(true);    // 设置开启日志,发布时请关闭日志
         JPushInterface.init(this);
