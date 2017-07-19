@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.view.WindowManager;
 import android.widget.ListView;
 
+import com.lxkj.sceniccity.andbase.util.AbLogUtil;
 import com.lxkj.sceniccity.app.MyApplication;
 import com.lxkj.sceniccity.app.adapter.UrlListAdapter;
 import com.lxkj.sceniccity.app.util.ToastUtil;
@@ -36,6 +37,7 @@ public class WebHttp {
 
             @Override
             public void onResponse(String response, int id) {
+                AbLogUtil.e("备用网址.................", response);
                 try {
                     JSONObject obj = new JSONObject(response);
                     if (obj.getString("result").equals("0")) {

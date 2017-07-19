@@ -1,11 +1,8 @@
 package com.lxkj.sceniccity.app.ui;
 
 import android.os.Bundle;
-import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
-import android.widget.ImageView;
-import android.widget.RelativeLayout;
 
 import com.lxkj.sceniccity.R;
 import com.lxkj.sceniccity.app.view.MyWebView;
@@ -30,12 +27,6 @@ public class WebViewActivity extends BaseActivity {
         init();
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        webview.loadUrl(Url);
-    }
-
     private void init() {
 //        ImageView image_back = (ImageView) findViewById(R.id.image_back);
 //        image_back.setOnClickListener(new View.OnClickListener() {
@@ -57,8 +48,13 @@ public class WebViewActivity extends BaseActivity {
         settings.setSupportZoom(true);
         // 设置支持js
         settings.setJavaScriptEnabled(true);
+        settings.setJavaScriptCanOpenWindowsAutomatically(true);
+        settings.setJavaScriptEnabled(true);
+        settings.setLoadWithOverviewMode(true);
+        settings.setAppCacheEnabled(true);
+        settings.setDomStorageEnabled(true);
         // 关闭缓存
-        settings.setCacheMode(WebSettings.LOAD_NO_CACHE);
+//        settings.setCacheMode(WebSettings.LOAD_NO_CACHE);
         // 支持自动加载图片
         settings.setLoadsImagesAutomatically(true);
         // 设置出现缩放工具
@@ -69,6 +65,8 @@ public class WebViewActivity extends BaseActivity {
         settings.setUseWideViewPort(true);
         // 自适应屏幕
         settings.setLoadWithOverviewMode(true);
+
+        webview.loadUrl(Url);
     }
 
 }

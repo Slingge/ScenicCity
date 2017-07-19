@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import com.lxkj.sceniccity.andbase.util.AbLogUtil;
 import com.lxkj.sceniccity.app.MyApplication;
 import com.lxkj.sceniccity.app.ui.WebViewActivity;
+import com.lxkj.sceniccity.app.util.ToastUtil;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
@@ -32,7 +33,6 @@ public class getRechargeHttp {
         OkHttpUtils.get().url(MyApplication.Url).addParams("json", json).build().execute(new StringCallback() {
             @Override
             public void onError(Call call, Exception e, int id) {
-
             }
 
             @Override

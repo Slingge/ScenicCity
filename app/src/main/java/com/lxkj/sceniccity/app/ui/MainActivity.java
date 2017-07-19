@@ -47,7 +47,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        getExtensionChart();//推广图
+//        getExtensionChart();//推广图
         init();
         new LuckPanHttp(this).getPrize();
         upToken();
